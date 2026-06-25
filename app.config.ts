@@ -32,7 +32,7 @@ const env = {
   appSlug: "zoin-sofyan-assistant",
   // S3 URL of the app logo - set this to the URL returned by generate_image when creating custom logo
   // Leave empty to use the default icon from assets/images/icon.png
-  logoUrl: "",
+  logoUrl: "https://d2xsxph8kpxj0f.cloudfront.net/310519663794405001/5DAbfTrMGeEvjBrX7VWgYS/icon-kJK7p6mKqVJu372kXti9h5.webp",
   scheme: schemeFromBundleId,
   iosBundleId: bundleId,
   androidPackage: bundleId,
