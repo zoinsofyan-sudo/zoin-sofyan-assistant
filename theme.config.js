@@ -12,4 +12,5 @@ const themeColors = {
   warning: { light: '#F59E0B', dark: '#FBBF24' },
   error: { light: '#EF4444', dark: '#F87171' },
 };
+
 module.exports = { themeColors };

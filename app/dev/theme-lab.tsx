@@ -10,7 +10,7 @@ import { useThemeContext } from "@/lib/theme-provider";
 
 type PaletteName = keyof typeof SchemeColors.light;
 
-const paletteNames: PaletteName[] = Object.keys(SchemeColors.light) as PaletteName[];
+const paletteNames: PaletteName[] = (Object.keys(SchemeColors.light) as unknown[]) as PaletteName[];
 
 function ColorSwatch({ name, value }: { name: PaletteName; value: string }) {
   return (
@@ -212,7 +212,7 @@ export default function ThemeLabScreen() {
             </Text>
             <View className="mt-3 gap-2">
               {swatches.map((item) => (
-                <ColorSwatch key={item.name} name={item.name} value={item.value} />
+                <ColorSwatch key={String(item.name)} name={item.name} value={item.value} />
               ))}
             </View>
           </ThemedView>

@@ -48,9 +48,12 @@
 - [x] Build Settings Hub with collapsible sections
 - [x] Implement AI Provider Settings
   - [x] Provider selector (Claude, Deepseek, Qwen, Gemini, Hugging Face, Groq)
-  - [ ] Optional API key configuration
+  - [x] API key configuration for all 9 providers (Gemini, Claude, xAI Grok, Groq, Deepseek, Qwen, Hugging Face, OpenAI, Anthropic)
+  - [x] Secure storage of API keys using expo-secure-store
+  - [x] Dedicated API Keys Management screen with modal presentation
+  - [x] Show/Hide API key toggle for security
+  - [x] Connection test button
   - [ ] Temperature and max tokens controls
-  - [ ] Connection test button
 - [x] Implement Microstock Settings
   - [x] Auto-detect platform toggle
   - [x] Auto-fill metadata toggle

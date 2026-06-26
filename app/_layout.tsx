@@ -88,6 +88,7 @@ export default function RootLayout() {
           <Stack screenOptions={{ headerShown: false }}>
             <Stack.Screen name="(tabs)" />
             <Stack.Screen name="oauth/callback" />
+            <Stack.Screen name="api-keys" options={{ presentation: "modal" }} />
           </Stack>
           <StatusBar style="auto" />
         </QueryClientProvider>

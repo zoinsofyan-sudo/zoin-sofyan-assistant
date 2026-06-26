@@ -3,6 +3,7 @@ import { useColors } from "@/hooks/use-colors";
 import { ScreenContainer } from "@/components/screen-container";
 import { IconSymbol } from "@/components/ui/icon-symbol";
 import { useState } from "react";
+import { useRouter } from "expo-router";
 
 const AI_PROVIDERS = ["Claude", "Deepseek", "Qwen", "Gemini", "Hugging Face", "Groq"];
 const THEMES = ["Gradient", "Dark", "Light"];
@@ -15,12 +16,13 @@ interface SettingsSection {
 
 interface SettingsItem {
   label: string;
-  type: "toggle" | "select" | "button";
+  type: "toggle" | "select" | "button" | "navigate";
   value?: boolean | string;
 }
 
 export default function SettingsScreen() {
   const colors = useColors();
+  const router = useRouter();
   const [expandedSection, setExpandedSection] = useState<string | null>("provider");
   const [provider, setProvider] = useState("Gemini");
   const [theme, setTheme] = useState("Gradient");
@@ -34,6 +36,7 @@ export default function SettingsScreen() {
       icon: "sparkles",
       items: [
         { label: "Default Provider", type: "select" },
+        { label: "Manage API Keys", type: "navigate" },
         { label: "Cache Responses", type: "toggle", value: caching },
         { label: "Test Connection", type: "button" },
       ],
@@ -249,6 +252,23 @@ export default function SettingsScreen() {
                                   ? "Import"
                                   : "Reset"}
                           </Text>
+                        </Pressable>
+                      )}
+
+                      {item.type === "navigate" && (
+                        <Pressable
+                          onPress={() => router.push("/api-keys")}
+                          className="px-3 py-1 rounded flex-row items-center gap-1"
+                          style={{ backgroundColor: colors.primary }}
+                        >
+                          <Text className="text-xs font-semibold text-white">
+                            Manage
+                          </Text>
+                          <IconSymbol
+                            name="chevron.right"
+                            size={12}
+                            color="#fff"
+                          />
                         </Pressable>
                       )}
                     </View>
